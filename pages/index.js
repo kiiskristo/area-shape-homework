@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import _ from 'lodash';
-import { allExercises } from './_excercises';
+import { allExercises } from '../data/excercises';
+import Head from 'next/head';
+import Header from '../components/layout/Header';
+import Footer from '../components/layout/Footer';
 
 const AreaExercisesApp = () => {
   // State to store all exercises
@@ -112,119 +115,133 @@ const AreaExercisesApp = () => {
   const exerciseType = currentExercise.type;
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 md:p-8">
-      <div className="max-w-4xl mx-auto">
-        <header className="text-center mb-8">
-          <h1 className="text-2xl md:text-3xl font-bold text-blue-700">Math Area Exercises</h1>
-          <p className="mt-2 text-gray-600">Practice calculating the area of different shapes</p>
-        </header>
+    <div className="min-h-screen flex flex-col">
+      <Head>
+        <title>Math Area Exercises - My Next.js App</title>
+        <meta name="description" content="Practice calculating the area of different shapes" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      
+      <Header />
+      
+      <main className="flex-grow">
+        <div className="min-h-screen bg-gray-50 p-4 md:p-8">
+          <div className="max-w-4xl mx-auto">
+            <header className="text-center mb-8">
+              <h1 className="text-2xl md:text-3xl font-bold text-blue-700">Math Area Exercises</h1>
+              <p className="mt-2 text-gray-600">Practice calculating the area of different shapes</p>
+            </header>
 
-        <div className="bg-white rounded-lg shadow-md p-4 md:p-6 mb-6">
-          <div className="flex justify-between mb-4">
-            <span className="font-semibold text-gray-700">Exercise {currentIndex + 1} of {exercises.length}</span>
-            <span className="font-semibold text-green-600">Score: {score}/{attempts}</span>
-          </div>
-
-          <div className="flex flex-col md:flex-row gap-6">
-            {/* SVG Exercise Display */}
-            <div className="flex-1 flex flex-col justify-center items-center border rounded-lg p-2 bg-gray-50">
-              <h3 className="text-lg font-medium text-gray-700 mb-3">Find the area</h3>
-              {currentExercise.svg}
-            </div>
-
-            {/* Exercise Information */}
-            <div className="flex-1">
-              <h2 className="text-xl font-semibold text-blue-600 mb-3">
-                Area Calculation
-              </h2>
-              
-              <div className="mb-6">
-                <label htmlFor="answer" className="block font-medium text-gray-700 mb-1">
-                  Your Answer:
-                </label>
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    id="answer"
-                    value={userAnswer}
-                    onChange={(e) => setUserAnswer(e.target.value)}
-                    placeholder="Enter your answer"
-                    className="flex-1 border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    onKeyPress={(e) => e.key === 'Enter' && checkAnswer()}
-                  />
-                  <button
-                    onClick={checkAnswer}
-                    className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  >
-                    Check
-                  </button>
-                </div>
-                
-                {/* Feedback message */}
-                {answerStatus === 'correct' && (
-                  <div className="mt-2 text-green-600 font-medium">
-                    Correct! Well done! 🎉
-                  </div>
-                )}
-                {answerStatus === 'incorrect' && (
-                  <div className="mt-2 text-red-600 font-medium">
-                    Incorrect. Try again!
-                  </div>
-                )}
-                {answerStatus === 'invalid' && (
-                  <div className="mt-2 text-orange-600 font-medium">
-                    Please enter a valid number.
-                  </div>
-                )}
+            <div className="bg-white rounded-lg shadow-md p-4 md:p-6 mb-6">
+              <div className="flex justify-between mb-4">
+                <span className="font-semibold text-gray-700">Exercise {currentIndex + 1} of {exercises.length}</span>
+                <span className="font-semibold text-green-600">Score: {score}/{attempts}</span>
               </div>
 
-              {/* Hint section */}
-              <div className="mb-4">
-                <details 
-                  className="bg-gray-50 rounded-md p-2"
-                  onClick={() => !seenHints[exerciseType] && viewHint(exerciseType)}
-                >
-                  <summary className="font-medium text-gray-700 cursor-pointer">Need a hint?</summary>
-                  <div className="mt-2 pl-4 text-gray-600">
-                    <p className="font-medium mb-1">Formula:</p>
-                    <div className="bg-blue-50 p-2 rounded text-blue-800 font-medium mb-2">
-                      {getFormula(exerciseType)}
+              <div className="flex flex-col md:flex-row gap-6">
+                {/* SVG Exercise Display */}
+                <div className="flex-1 flex flex-col justify-center items-center border rounded-lg p-2 bg-gray-50">
+                  <h3 className="text-lg font-medium text-gray-700 mb-3">Find the area</h3>
+                  {currentExercise.svg}
+                </div>
+
+                {/* Exercise Information */}
+                <div className="flex-1">
+                  <h2 className="text-xl font-semibold text-blue-600 mb-3">
+                    Area Calculation
+                  </h2>
+                  
+                  <div className="mb-6">
+                    <label htmlFor="answer" className="block font-medium text-gray-700 mb-1">
+                      Your Answer:
+                    </label>
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        id="answer"
+                        value={userAnswer}
+                        onChange={(e) => setUserAnswer(e.target.value)}
+                        placeholder="Enter your answer"
+                        className="flex-1 border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        onKeyPress={(e) => e.key === 'Enter' && checkAnswer()}
+                      />
+                      <button
+                        onClick={checkAnswer}
+                        className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      >
+                        Check
+                      </button>
                     </div>
                     
-                    <p className="text-orange-600 font-medium mt-2">Note: Using a hint will reduce your points to 0.5 instead of 1.</p>
+                    {/* Feedback message */}
+                    {answerStatus === 'correct' && (
+                      <div className="mt-2 text-green-600 font-medium">
+                        Correct! Well done! 🎉
+                      </div>
+                    )}
+                    {answerStatus === 'incorrect' && (
+                      <div className="mt-2 text-red-600 font-medium">
+                        Incorrect. Try again!
+                      </div>
+                    )}
+                    {answerStatus === 'invalid' && (
+                      <div className="mt-2 text-orange-600 font-medium">
+                        Please enter a valid number.
+                      </div>
+                    )}
                   </div>
-                </details>
+
+                  {/* Hint section */}
+                  <div className="mb-4">
+                    <details 
+                      className="bg-gray-50 rounded-md p-2"
+                      onClick={() => !seenHints[exerciseType] && viewHint(exerciseType)}
+                    >
+                      <summary className="font-medium text-gray-700 cursor-pointer">Need a hint?</summary>
+                      <div className="mt-2 pl-4 text-gray-600">
+                        <p className="font-medium mb-1">Formula:</p>
+                        <div className="bg-blue-50 p-2 rounded text-blue-800 font-medium mb-2">
+                          {getFormula(exerciseType)}
+                        </div>
+                        
+                        <p className="text-orange-600 font-medium mt-2">Note: Using a hint will reduce your points to 0.5 instead of 1.</p>
+                      </div>
+                    </details>
+                  </div>
+                </div>
               </div>
+            </div>
+
+            {/* Navigation buttons */}
+            <div className="flex justify-between">
+              <button
+                onClick={prevExercise}
+                disabled={currentIndex === 0}
+                className={`px-4 py-2 rounded-md ${
+                  currentIndex === 0
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                }`}
+              >
+                Previous
+              </button>
+              <button
+                onClick={nextExercise}
+                disabled={currentIndex === exercises.length - 1}
+                className={`px-4 py-2 rounded-md ${
+                  currentIndex === exercises.length - 1
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : 'bg-green-600 text-white hover:bg-green-700'
+                }`}
+              >
+                Next
+              </button>
             </div>
           </div>
         </div>
-
-        {/* Navigation buttons */}
-        <div className="flex justify-between">
-          <button
-            onClick={prevExercise}
-            disabled={currentIndex === 0}
-            className={`px-4 py-2 rounded-md ${
-              currentIndex === 0
-                ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-            }`}
-          >
-            Previous
-          </button>
-          <button
-            onClick={nextExercise}
-            disabled={currentIndex === exercises.length - 1}
-            className={`px-4 py-2 rounded-md ${
-              currentIndex === exercises.length - 1
-                ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                : 'bg-green-600 text-white hover:bg-green-700'
-            }`}
-          >
-            Next
-          </button>
-        </div>
-      </div>
+      </main>
+      
+      <Footer />
     </div>
   );
 };
