@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import _ from 'lodash';
-import { allExercises } from './excercises';
+import { allExercises } from './_excercises';
 
 const AreaExercisesApp = () => {
   // State to store all exercises
