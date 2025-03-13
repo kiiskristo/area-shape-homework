@@ -271,7 +271,7 @@ export const allExercises = [
                 </defs>
                 <polygon points="60,120 180,120 60,80" fill="none" stroke="black" strokeWidth="2" />
                 <line x1="60" y1="80" x2="60" y2="120" stroke="brown" strokeWidth="1" markerStart="url(#tArrow6)" markerEnd="url(#tArrow6)" />
-                <text x="50" y="100" fontSize="12" textAnchor="middle" transform="rotate(-90,50,100)">9</text>
+                <text x="50" y="87" font-size="12" text-anchor="middle" transform="rotate(-270,50,100)">9</text>
                 <line x1="60" y1="120" x2="180" y2="120" stroke="brown" strokeWidth="1" markerStart="url(#tArrow6)" markerEnd="url(#tArrow6)" />
                 <text x="120" y="135" fontSize="12" textAnchor="middle">16</text>
             </svg>
@@ -315,7 +315,7 @@ export const allExercises = [
                 <line x1="50" y1="30" x2="170" y2="30" stroke="red" strokeWidth="1" markerStart="url(#pArrow1)" markerEnd="url(#pArrow1)" />
                 <text x="110" y="25" fontSize="12" textAnchor="middle">17</text>
                 <line x1="60" y1="40" x2="60" y2="100" stroke="red" strokeWidth="1" markerStart="url(#pArrow1)" markerEnd="url(#pArrow1)" />
-                <text x="50" y="70" fontSize="12" textAnchor="middle" transform="rotate(-90,50,70)">9</text>
+                <text x="50" y="55" font-size="12" text-anchor="middle" transform="rotate(-270,50,70)">9</text>
             </svg>
         )
     },
@@ -441,7 +441,7 @@ export const allExercises = [
                 <line x1="50" y1="60" x2="150" y2="60" stroke="teal" strokeWidth="1" markerStart="url(#pArrow7)" markerEnd="url(#pArrow7)" />
                 <text x="100" y="55" fontSize="12" textAnchor="middle">13</text>
                 <line x1="60" y1="70" x2="60" y2="110" stroke="teal" strokeWidth="1" markerStart="url(#pArrow7)" markerEnd="url(#pArrow7)" />
-                <text x="50" y="90" fontSize="12" textAnchor="middle" transform="rotate(-90,50,90)">6</text>
+                <text x="50" y="75" font-size="12" text-anchor="middle" transform="rotate(-270,50,90)">6</text>
             </svg>
         )
     },
@@ -466,7 +466,7 @@ export const allExercises = [
                 <line x1="40" y1="100" x2="180" y2="100" stroke="red" strokeWidth="1" markerStart="url(#zArrow1)" markerEnd="url(#zArrow1)" />
                 <text x="110" y="115" fontSize="12" textAnchor="middle">21</text>
                 <line x1="80" y1="30" x2="80" y2="90" stroke="red" strokeWidth="1" markerStart="url(#zArrow1)" markerEnd="url(#zArrow1)" />
-                <text x="70" y="60" fontSize="12" textAnchor="middle" transform="rotate(-90,70,60)">9</text>
+                <text x="70" y="48" font-size="12" text-anchor="middle" transform="rotate(-270,70,60)">9</text>
             </svg>
         )
     },
@@ -512,7 +512,7 @@ export const allExercises = [
                 <line x1="50" y1="100" x2="130" y2="100" stroke="green" strokeWidth="1" markerStart="url(#zArrow3)" markerEnd="url(#zArrow3)" />
                 <text x="90" y="115" fontSize="12" textAnchor="middle">9</text>
                 <line x1="60" y1="30" x2="60" y2="90" stroke="green" strokeWidth="1" markerStart="url(#zArrow3)" markerEnd="url(#zArrow3)" />
-                <text x="50" y="60" fontSize="12" textAnchor="middle" transform="rotate(-90,50,60)">7</text>
+                <text x="50" y="48" font-size="12" text-anchor="middle" transform="rotate(-270,50,60)">7</text>
             </svg>
         )
     },
@@ -558,7 +558,7 @@ export const allExercises = [
                 <line x1="90" y1="100" x2="150" y2="100" stroke="orange" strokeWidth="1" markerStart="url(#zArrow5)" markerEnd="url(#zArrow5)" />
                 <text x="120" y="115" fontSize="12" textAnchor="middle">8</text>
                 <line x1="100" y1="40" x2="100" y2="100" stroke="orange" strokeWidth="1" markerStart="url(#zArrow5)" markerEnd="url(#zArrow5)" />
-                <text x="90" y="77" fontSize="12" textAnchor="middle" transform="rotate(-90,90,70)">6</text>
+                <text x="90" y="58" font-size="12" text-anchor="middle" transform="rotate(-270,90,70)">6</text>
             </svg>
         )
     },
@@ -604,7 +604,7 @@ export const allExercises = [
                 <line x1="60" y1="100" x2="120" y2="100" stroke="teal" strokeWidth="1" markerStart="url(#zArrow7)" markerEnd="url(#zArrow7)" />
                 <text x="90" y="115" fontSize="12" textAnchor="middle">8</text>
                 <line x1="70" y1="40" x2="70" y2="100" stroke="teal" strokeWidth="1" markerStart="url(#zArrow7)" markerEnd="url(#zArrow7)" />
-                <text x="60" y="70" fontSize="12" textAnchor="middle" transform="rotate(-90,60,70)">5</text>
+                <text x="60" y="58" font-size="12" text-anchor="middle" transform="rotate(-270,60,70)">5</text>
             </svg>
         )
     }
