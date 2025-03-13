@@ -92,7 +92,7 @@ export const allExercises = [
         type: 'rectangle',
         title: 'Exercise 5',
         dimensions: { width: 140, height: 60 },
-        solution: 8400,
+        solution: 9380,
         svg: (
             <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
                 <defs>
