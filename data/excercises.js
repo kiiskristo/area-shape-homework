@@ -399,7 +399,7 @@ export const allExercises = [
                 <line x1="70" y1="40" x2="170" y2="40" stroke="orange" strokeWidth="1" markerStart="url(#pArrow5)" markerEnd="url(#pArrow5)" />
                 <text x="120" y="35" fontSize="12" textAnchor="middle">24</text>
                 <line x1="80" y1="50" x2="80" y2="100" stroke="orange" strokeWidth="1" markerStart="url(#pArrow5)" markerEnd="url(#pArrow5)" />
-                <text x="70" y="75" fontSize="12" textAnchor="middle" transform="rotate(-90,70,75)">9</text>
+                <text x="70" y="60" font-size="12" text-anchor="middle" transform="rotate(-270,70,75)">9</text>
             </svg>
         )
     },
